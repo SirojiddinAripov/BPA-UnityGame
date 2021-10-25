@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 5f; //sets move speed (can be changed in )
     public Rigidbody2D rb;
-    Vector2 moveDirection;
+    private Vector2 moveDirection;
     public Animator animator;
+    [SerializeField] private float maxHealth = 60f;
 
-    // Update is called once per frame
+    private void Start() 
+    {
+        
+    }
+
+
     private void Update()
     {
         GetInputs();
@@ -20,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         Move();
     }
 
-    private void GetInputs()
+    private void GetInputs() //manage inputs
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
@@ -32,8 +38,13 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", moveDirection.sqrMagnitude);
     }
 
-    private void Move()
+    private void Move() //manage movement
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+    }
+
+    private void Attack() //manage attacks
+    {
+
     }
 }
