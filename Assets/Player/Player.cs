@@ -8,11 +8,12 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 moveDirection;
     public Animator animator;
-    [SerializeField] private float maxHealth = 60f;
+    [SerializeField] private float maxHealth = 100f;
+    public float Health;
 
     private void Start() 
     {
-        
+        Health = maxHealth;
     }
 
 
@@ -46,5 +47,20 @@ public class Player : MonoBehaviour
     private void Attack() //manage attacks
     {
 
+    }
+
+    public void setHealth(float mod) //manages playerHealth
+    {
+        Health += mod;
+
+        if (Health >= maxHealth)
+        {
+            Health = maxHealth;
+        }
+        else if (Health <= 0f)
+        {
+            Health = 0f;
+            Debug.Log("Player Has Died");
+        }
     }
 }

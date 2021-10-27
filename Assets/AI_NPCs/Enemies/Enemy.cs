@@ -2,32 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
-{
-    private Vector3 startPosition;
-    private Vector3 roamPosition;
-    [SerializeField] private float moveSpeed = 5f;
 
-    private void Start() 
+public class Enemy : MonoBehaviour { //creates enemy framework
+    private float health = 100f;
+    public float moveSpeed = 4.5f;
+    public float baseDamage = 0;
+    public Transform target;
+    public float chaseRadius = 4f;
+    public float attackRadius=1.5f;
+
+    private void FixedUpdate()
     {
-        startPosition = transform.position;
-        roamPosition = getRoamingPosition();    
+        CheckDistance();
     }
 
-    private void Update() 
-    {
-        transform.position = Vector3.MoveTowards(transform.position, roamPosition, moveSpeed * Time.deltaTime);
-
-        if (Vector3.Distance(transform.position, roamPosition) < 1f) //roam position reached
+    private void CheckDistance(){
+        if (Vector3.Distance(transform.position, target.position) <= chaseRadius && Vector3.Distance(transform.position, target.position) >= attackRadius)
         {
-            roamPosition = getRoamingPosition();
+            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
     }
-
-    private Vector3 getRoamingPosition()
-    {
-        return startPosition + new Vector3(UnityEngine.Random.Range(-1f,1f), UnityEngine.Random.Range(-1f,1f)).normalized * Random.Range(1f, 5f);
-    }
-
-
-}
+} 
