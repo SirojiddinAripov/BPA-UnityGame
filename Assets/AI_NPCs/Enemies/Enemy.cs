@@ -10,16 +10,20 @@ public class Enemy : MonoBehaviour { //creates enemy framework
     public Transform target;
     public float chaseRadius = 4f;
     public float attackRadius=1.5f;
-
-    private void FixedUpdate()
-    {
-        CheckDistance();
+    public Player player;
+    
+    public void Start(){
+        
     }
 
-    private void CheckDistance(){
+    private void FixedUpdate(){
+        Move();
+    }
+
+    private void Move(){
         if (Vector3.Distance(transform.position, target.position) <= chaseRadius && Vector3.Distance(transform.position, target.position) >= attackRadius)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
     }
-} 
+}

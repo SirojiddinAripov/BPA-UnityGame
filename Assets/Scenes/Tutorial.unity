@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &282982589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 282982590}
+  m_Layer: 10
+  m_Name: AimPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &282982590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282982589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7, y: -0.3, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 972843624}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5885,9 +5915,10 @@ GameObject:
   - component: {fileID: 972843624}
   - component: {fileID: 972843623}
   - component: {fileID: 972843622}
-  - component: {fileID: 972843621}
-  - component: {fileID: 972843625}
   - component: {fileID: 972843626}
+  - component: {fileID: 972843621}
+  - component: {fileID: 972843627}
+  - component: {fileID: 972843625}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -5910,8 +5941,8 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 972843622}
   animator: {fileID: 972843625}
-  maxHealth: 100
   Health: 0
+  cam: {fileID: 519420031}
 --- !u!50 &972843622
 Rigidbody2D:
   serializedVersion: 4
@@ -5972,7 +6003,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -133807223
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1f2769f6b870a604391a2b4996178002, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5994,7 +6025,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.5, y: 13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 282982590}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6043,6 +6075,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.98, y: 0.98}
   m_EdgeRadius: 0
+--- !u!114 &972843627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972843620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9873da8bc0f0d45a1d147eed2d8024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimPoint: {fileID: 282982590}
+  bulletPrefab: {fileID: 4696725304869932720, guid: c218879c0b092874fbc34598957aed9a, type: 3}
+  bulletForce: 20
 --- !u!1 &1175704398
 GameObject:
   m_ObjectHideFlags: 0
@@ -37865,8 +37912,8 @@ GameObject:
   - component: {fileID: 2123176783}
   - component: {fileID: 2123176782}
   - component: {fileID: 2123176781}
-  - component: {fileID: 2123176780}
   - component: {fileID: 2123176778}
+  - component: {fileID: 2123176779}
   m_Layer: 10
   m_Name: EnemyDummy
   m_TagString: Untagged
@@ -37886,12 +37933,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c368f83b0f8dd2641b724036a54d4628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 4.5
   baseDamage: 0
   target: {fileID: 972843624}
-  chaseRadius: 3.5
-  attackRadius: 1
---- !u!58 &2123176780
+  chaseRadius: 4
+  attackRadius: 1.5
+  player: {fileID: 972843621}
+--- !u!58 &2123176779
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

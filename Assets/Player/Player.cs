@@ -2,20 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Player Class
+//Used by the player object in all scenes
+//Handles movement
+//Handles health
+//Triggers events
+
 public class Player : MonoBehaviour
 {
-    public float moveSpeed = 5f; //sets move speed (can be changed in )
+    public float moveSpeed = 5f;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
+    private Vector2 mousePos;
     public Animator animator;
-    [SerializeField] private float maxHealth = 100f;
+    private float maxHealth = 100f;
     public float Health;
-
-    private void Start() 
-    {
-        Health = maxHealth;
-    }
-
+    public Camera cam;
 
     private void Update()
     {
@@ -37,30 +39,16 @@ public class Player : MonoBehaviour
         animator.SetFloat("Horizontal", moveX);
         animator.SetFloat("Vertical", moveY);
         animator.SetFloat("Speed", moveDirection.sqrMagnitude);
+
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void Move() //manage movement
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-    }
 
-    private void Attack() //manage attacks
-    {
-
-    }
-
-    public void setHealth(float mod) //manages playerHealth
-    {
-        Health += mod;
-
-        if (Health >= maxHealth)
-        {
-            Health = maxHealth;
-        }
-        else if (Health <= 0f)
-        {
-            Health = 0f;
-            Debug.Log("Player Has Died");
-        }
+        Vector2 lookDir = mousePos - rb.position;
+        float zRotation = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg + 90f;
+        rb.rotation = zRotation;
     }
 }
