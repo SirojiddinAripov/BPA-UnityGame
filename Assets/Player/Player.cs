@@ -13,42 +13,59 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
-    private Vector2 mousePos;
     public Animator animator;
-    private float maxHealth = 100f;
     public float Health;
-    public Camera cam;
 
-    private void Update()
+    private void Start() {
+        Health = 100f;
+    }
+    private void Update()  //updates with local framerate
     {
         GetInputs();
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate()  //updates on set delay (set in editor) 
     {
         Move();
     }
 
     private void GetInputs() //manage inputs
-    {
+    {   
+        //collect all inputs
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-
+        
+        //set move vector
         moveDirection = new Vector2(moveX, moveY).normalized;
-
+        
+        //player movement animations
         animator.SetFloat("Horizontal", moveX);
         animator.SetFloat("Vertical", moveY);
         animator.SetFloat("Speed", moveDirection.sqrMagnitude);
-
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void Move() //manage movement
     {
+        //changes position of the attached rigidbody
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+    }
 
-        Vector2 lookDir = mousePos - rb.position;
-        float zRotation = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg + 90f;
-        rb.rotation = zRotation;
+
+    public void takeDamage(float damagePercent)
+    {
+        Health -= (Health * damagePercent); //takes away a percentage of the health
+        if(Health < 1)
+        {
+            Debug.Log("Player is dead");
+        }
+    }
+
+    public void heal(float healPercent)
+    {
+        Health += (Health * healPercent); //heals a percentage of the health
+        if(Health >= 100)
+        {
+            Health = 100;
+        }
     }
 }
