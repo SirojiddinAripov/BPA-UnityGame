@@ -1,31 +1,43 @@
 fileFormatVersion: 2
-guid: 8b7bc7efdca28be44bc97797d9274366
+guid: 0274967ea077ea1429c1a6b800c7bc73
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9215872231965264240
-    second: PlayerWalkLeft-Sheet_0
+      213: -1430598699164634296
+    second: playerMovementAnim_0
   - first:
-      213: -8054997683909045520
-    second: PlayerWalkLeft-Sheet_1
+      213: 7784932582489254545
+    second: playerMovementAnim_1
   - first:
-      213: -247379151619313765
-    second: PlayerWalkLeft-Sheet_2
+      213: 6945431875451376157
+    second: playerMovementAnim_2
   - first:
-      213: -1013020196222127247
-    second: PlayerWalkLeft-Sheet_3
+      213: 1974631991266403290
+    second: playerMovementAnim_3
   - first:
-      213: 9212896359143794963
-    second: PlayerWalkLeft-Sheet_4
+      213: -5153567701786336622
+    second: playerMovementAnim_4
   - first:
-      213: 4220563900350363599
-    second: PlayerWalkLeft-Sheet_5
+      213: -3799204141036950222
+    second: playerMovementAnim_5
   - first:
-      213: -4420082599042342929
-    second: PlayerWalkLeft-Sheet_6
+      213: -5875396947697302580
+    second: playerMovementAnim_6
   - first:
-      213: -1500729890237790678
-    second: PlayerWalkLeft-Sheet_7
+      213: 3546797453574117761
+    second: playerMovementAnim_7
+  - first:
+      213: 6763579898888947377
+    second: playerMovementAnim_8
+  - first:
+      213: 4643073525982432932
+    second: playerMovementAnim_9
+  - first:
+      213: -8192767674452800808
+    second: playerMovementAnim_10
+  - first:
+      213: -4492048969323877239
+    second: playerMovementAnim_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +82,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -151,13 +163,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerWalkLeft-Sheet_0
+      name: playerMovementAnim_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 128
-        height: 128
+        y: 192
+        width: 44
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0790da997fa55ef70800000000000000
-      internalID: 9215872231965264240
+      spriteID: 843f720101e752ce0800000000000000
+      internalID: -1430598699164634296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerWalkLeft-Sheet_1
+      name: playerMovementAnim_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
+        x: 44
+        y: 192
+        width: 44
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f2d100a846e63090800000000000000
-      internalID: -8054997683909045520
+      spriteID: 19ae2abffe2a90c60800000000000000
+      internalID: 7784932582489254545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerWalkLeft-Sheet_2
+      name: playerMovementAnim_2
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 128
+        x: 88
+        y: 192
+        width: 44
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9fa4e6e8f1219cf0800000000000000
-      internalID: -247379151619313765
+      spriteID: d1254f30e71236060800000000000000
+      internalID: 6945431875451376157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerWalkLeft-Sheet_3
+      name: playerMovementAnim_3
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 128
+        x: 176
+        y: 192
+        width: 44
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,20 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17332edaf7701f1f0800000000000000
-      internalID: -1013020196222127247
+      spriteID: ad36e81855d476b10800000000000000
+      internalID: 1974631991266403290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerWalkLeft-Sheet_4
+      name: playerMovementAnim_4
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
+        x: 220
+        y: 192
+        width: 44
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31961473d68cadf70800000000000000
-      internalID: 9212896359143794963
+      spriteID: 2926911ea79da78b0800000000000000
+      internalID: -5153567701786336622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerWalkLeft-Sheet_5
+      name: playerMovementAnim_5
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
+        x: 264
+        y: 192
+        width: 44
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc778308184729a30800000000000000
-      internalID: 4220563900350363599
+      spriteID: 23dac4876f3864bc0800000000000000
+      internalID: -3799204141036950222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerWalkLeft-Sheet_6
+      name: playerMovementAnim_6
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 128
+        x: 0
+        y: 64
+        width: 44
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,20 +303,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fef12367b46b8a2c0800000000000000
-      internalID: -4420082599042342929
+      spriteID: cc38612fa95667ea0800000000000000
+      internalID: -5875396947697302580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerWalkLeft-Sheet_7
+      name: playerMovementAnim_7
       rect:
         serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
+        x: 44
+        y: 64
+        width: 44
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,8 +324,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a26c094bd165c2be0800000000000000
-      internalID: -1500729890237790678
+      spriteID: 1899b860e71c83130800000000000000
+      internalID: 3546797453574117761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMovementAnim_8
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 64
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b68f3345101ddd50800000000000000
+      internalID: 6763579898888947377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMovementAnim_9
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 64
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae043695c28f6040800000000000000
+      internalID: 4643073525982432932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMovementAnim_10
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 64
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da00fc05317d4e80800000000000000
+      internalID: -8192767674452800808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMovementAnim_11
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 64
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c6ac5234909a1c0800000000000000
+      internalID: -4492048969323877239
       vertices: []
       indices: 
       edges: []

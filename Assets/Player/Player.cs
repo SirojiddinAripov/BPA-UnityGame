@@ -10,62 +10,55 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed, moveX, moveY, Health;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
-    public Animator animator;
-    public float Health;
+    private Vector2 mousePos;
+    public Animator anim;
+    public Camera cam;
+    private bool walk;
 
-    private void Start() {
-        Health = 100f;
-    }
-    private void Update()  //updates with local framerate
+    private void Update()
     {
         GetInputs();
     }
 
-    private void FixedUpdate()  //updates on set delay (set in editor) 
+    private void FixedUpdate()
     {
         Move();
     }
 
     private void GetInputs() //manage inputs
-    {   
-        //collect all inputs
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-        
-        //set move vector
+    {
+        moveX = Input.GetAxisRaw("Horizontal");
+        moveY = Input.GetAxisRaw("Vertical");
+
         moveDirection = new Vector2(moveX, moveY).normalized;
-        
-        //player movement animations
-        animator.SetFloat("Horizontal", moveX);
-        animator.SetFloat("Vertical", moveY);
-        animator.SetFloat("Speed", moveDirection.sqrMagnitude);
+
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    private void Move() //manage movement
+    private void Move() //manage movement and animations
     {
-        //changes position of the attached rigidbody
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-    }
-
-
-    public void takeDamage(float damagePercent)
-    {
-        Health -= (Health * damagePercent); //takes away a percentage of the health
-        if(Health < 1)
-        {
-            Debug.Log("Player is dead");
+        
+        if(moveX != 0 || moveY != 0){
+            anim.SetFloat("X", moveX);
+            anim.SetFloat("Y", moveY);
+            if (!walk){
+                walk = true;
+            }
+            anim.SetBool("IsMoving", walk);
         }
-    }
 
-    public void heal(float healPercent)
-    {
-        Health += (Health * healPercent); //heals a percentage of the health
-        if(Health >= 100)
+        else
         {
-            Health = 100;
+            if(walk){
+                walk = false;
+                rb.velocity = Vector3.zero;
+            }
+
+            anim.SetBool("IsMoving", walk);
         }
     }
 }
