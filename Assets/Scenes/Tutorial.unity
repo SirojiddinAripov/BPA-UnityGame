@@ -3554,9 +3554,9 @@ GameObject:
   - component: {fileID: 972843624}
   - component: {fileID: 972843623}
   - component: {fileID: 972843622}
+  - component: {fileID: 972843626}
   - component: {fileID: 972843621}
   - component: {fileID: 972843625}
-  - component: {fileID: 972843626}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -3704,6 +3704,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.6875, y: 1}
   m_Direction: 0
+--- !u!1 &1125048467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2924043309102317087, guid: 58013a66ea41c4c469a04f8ce81f38c6, type: 3}
+  m_PrefabInstance: {fileID: 2924043309262021974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1125048468
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125048467}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1175704398
 GameObject:
   m_ObjectHideFlags: 0
@@ -9511,11 +9532,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2924043309102317081, guid: 58013a66ea41c4c469a04f8ce81f38c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.52
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2924043309102317081, guid: 58013a66ea41c4c469a04f8ce81f38c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.01
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2924043309102317081, guid: 58013a66ea41c4c469a04f8ce81f38c6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9549,6 +9570,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2924043309102317083, guid: 58013a66ea41c4c469a04f8ce81f38c6, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2924043309102317084, guid: 58013a66ea41c4c469a04f8ce81f38c6, type: 3}
       propertyPath: range
       value: 4
@@ -9561,5 +9586,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPrefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2924043309102317085, guid: 58013a66ea41c4c469a04f8ce81f38c6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 58013a66ea41c4c469a04f8ce81f38c6, type: 3}
