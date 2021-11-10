@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         GetInputs();
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate() //move and attack on fixed time (50 updates per second)
     {
         Move();
         if(Input.GetButtonDown("Fire1")){
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         
     }
 
-    private void GetInputs() //manage inputs
+    private void GetInputs() //manage move inputs and positons
     {
         Cursor.lockState = CursorLockMode.Confined;
         moveX = Input.GetAxisRaw("Horizontal");
