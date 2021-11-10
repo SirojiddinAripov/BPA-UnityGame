@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 798435576}
   - component: {fileID: 798435575}
   - component: {fileID: 798435574}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MapEdges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3890,7 +3890,7 @@ GameObject:
   - component: {fileID: 2090358747}
   - component: {fileID: 2090358749}
   - component: {fileID: 2090358748}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

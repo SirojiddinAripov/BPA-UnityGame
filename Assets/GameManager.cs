@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour //general behaviors
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private enum state{ //init game state
+        pause,
+        play,
+        dead,
+        menu,
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Awake() {
+        DontDestroyOnLoad(gameObject); //keeps manager open indefinitely
     }
 }

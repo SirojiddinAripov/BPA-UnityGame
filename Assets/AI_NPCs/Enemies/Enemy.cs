@@ -24,6 +24,9 @@ public class Enemy : MonoBehaviour //controls basic enemy movement and attacks
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
+    public float getMaxHealth(){
+        return maxHealth;
+    }
     public float getHealth(){
         return health;
     }

@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed, moveX, moveY, Health;
     public Rigidbody2D rb;
-    private Vector2 moveDirection, mousePos;
+    private Vector2 moveDirection;
+    private Vector3 mousePos;
     public Animator anim;
     public Camera cam;
     private bool walk;
@@ -33,12 +34,14 @@ public class Player : MonoBehaviour
 
     private void GetInputs() //manage inputs
     {
+        Cursor.lockState = CursorLockMode.Confined;
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(moveX, moveY).normalized;
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        mousePos -= transform.position;
     }
 
     private void Move() //manage movement and animations
@@ -77,7 +80,7 @@ public class Player : MonoBehaviour
 
             if(enemy != null){
                 float damage = Random.Range(0.15f, 0.25f);
-                damage *= enemy.getHealth();
+                damage *= enemy.getMaxHealth();
                 enemy.takeDamage(damage);
 
                 if (enemy.getHealth() <= 1f){
