@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    public SceneControl sc;
     public void NewGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //opens begining of game and ignores player state
+        sc.startGame();
     }
 
+    public void LoadGame(){
+        sc.resumeGame();
+    }
     public void QuitGame()
     {
         Application.Quit();

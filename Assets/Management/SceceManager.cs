@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceceManager : MonoBehaviour
+public class SceneControl : MonoBehaviour
 {
     private void Awake() {
         SceneManager.LoadScene(1);
@@ -14,7 +14,7 @@ public class SceceManager : MonoBehaviour
     }
 
     public void resumeGame(){
-        //get scene from JSON
+        //get scene data from JSON
     }
 
     public void pause(){
