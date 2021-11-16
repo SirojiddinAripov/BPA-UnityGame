@@ -26,4 +26,8 @@ public class SceneControl : MonoBehaviour
         //remind to save
         //if confirmed - SceneManager.LoadScene(1);
     }
+
+    public void changeScene(string x){
+        SceneManager.LoadScene(x);
+    }
 }

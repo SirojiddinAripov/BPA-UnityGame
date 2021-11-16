@@ -17,6 +17,12 @@ public class Player : MonoBehaviour
     public Animator anim;
     public Camera cam;
     private bool walk;
+    public PlayerCoords startPos;
+
+    private void Awake() {
+        Cursor.lockState = CursorLockMode.Confined;
+        transform.position = startPos.initValue;
+    }
 
     private void Update()
     {
@@ -26,7 +32,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate() //move and attack on fixed time (50 updates per second)
     {
         Move();
-        if(Input.GetButtonDown("Fire1")){
+        if(Input.GetMouseButtonDown(0)){
             Shoot();
         }
         
@@ -34,7 +40,6 @@ public class Player : MonoBehaviour
 
     private void GetInputs() //manage move inputs and positons
     {
-        Cursor.lockState = CursorLockMode.Confined;
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");
 
@@ -48,23 +53,18 @@ public class Player : MonoBehaviour
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
         
-        if(moveX != 0 || moveY != 0){
+        if(rb.velocity.x != 0 || rb.velocity.y != 0){
             anim.SetFloat("X", moveX);
             anim.SetFloat("Y", moveY);
-            if (!walk){
-                walk = true;
-            }
-            anim.SetBool("IsMoving", walk);
+            anim.SetBool("IsMoving", true);
         }
 
         else
         {
             if(walk){
-                walk = false;
                 rb.velocity = Vector3.zero;
             }
-
-            anim.SetBool("IsMoving", walk);
+            anim.SetBool("IsMoving", false);
         }
     }
 
