@@ -7,11 +7,14 @@ public class Transitions : MonoBehaviour
 {
     public string sceneToLoad;
     public Vector3 playerPos;
-    public PlayerCoords coords;
+    public PlayerStats stats;
+    public Player player;
     private void OnTriggerEnter2D(Collider2D other){
         if(other.tag == "Player" && !other.isTrigger){
             EditorSceneManager.LoadScene(sceneToLoad);
-            coords.initValue = playerPos;
+            stats.playerCoords = playerPos;
+            stats.playerHealth = player.Health;
+            stats.playerMana = player.Mana;
         }
     }
 }

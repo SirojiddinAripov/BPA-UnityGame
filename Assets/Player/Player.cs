@@ -10,32 +10,30 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed, moveX, moveY, Health;
+    public float moveSpeed, moveX, moveY, Health, Mana;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
     private Vector3 mousePos;
     public Animator anim;
     public Camera cam;
-    private bool walk;
-    public PlayerCoords startPos;
+    public PlayerStats stats;
 
-    private void Awake() {
-        Cursor.lockState = CursorLockMode.Confined;
-        transform.position = startPos.initValue;
+    private void Start() {
+        transform.position = stats.playerCoords;
+        Health = stats.playerHealth;
+        Mana = stats.playerMana;
     }
 
     private void Update()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         GetInputs();
     }
 
     private void FixedUpdate() //move and attack on fixed time (50 updates per second)
     {
-        Move();
-        if(Input.GetMouseButtonDown(0)){
-            Shoot();
-        }
-        
+        Move();      
+        Shoot();  
     }
 
     private void GetInputs() //manage move inputs and positons
@@ -58,36 +56,25 @@ public class Player : MonoBehaviour
             anim.SetFloat("Y", moveY);
             anim.SetBool("IsMoving", true);
         }
-
         else
         {
-            if(walk){
-                rb.velocity = Vector3.zero;
-            }
+            rb.velocity = Vector3.zero;
             anim.SetBool("IsMoving", false);
         }
     }
 
-    private void Shoot(){//manages shooting
-        int layerMask = (LayerMask.GetMask("Enemy"));
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, mousePos, Mathf.Infinity, layerMask); //creates ray
-        Debug.DrawRay(transform.position, mousePos, Color.blue, 10f);
+    public void GetHurt(float damage){
+        Health -= damage;
+        Debug.Log("Player Health: " + Health);
+    }
 
-        if (hit){
-            Debug.Log("Raycast: " + hit.collider.gameObject);
-            Enemy enemy = (hit.collider.gameObject.GetComponent<Enemy>());
-            GameObject other = hit.collider.gameObject;
-
-            if(enemy != null){
-                float damage = Random.Range(0.15f, 0.25f);
-                damage *= enemy.getMaxHealth();
-                enemy.takeDamage(damage);
-
-                if (enemy.getHealth() <= 1f){
-                    Destroy(other);
-                    Debug.Log("Enemy has died");
-                }
+    private void Shoot(){
+        if (Input.GetMouseButtonDown(0)){
+            Debug.DrawRay(transform.position, mousePos, Color.blue, 10f);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, mousePos, Mathf.Infinity, LayerMask.NameToLayer("Enemy"));
+            if (hit){
+                Debug.Log("Hit: " + hit.collider.gameObject);
             }
         }
-    }
+    }   
 }

@@ -71,5 +71,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: World
-  playerPos: {x: 0, y: 0}
-  coords: {fileID: 11400000, guid: 4d4d003192cb75c408561238aab4b1dc, type: 2}
+  playerPos: {x: 0, y: 0, z: 0}
+  stats: {fileID: 11400000, guid: fcedb80b116b43e4ab4e1a6f8127fea7, type: 2}
+  player: {fileID: 6516310543711042395, guid: adec07b33b3e4094db68518436ab5f1f, type: 3}

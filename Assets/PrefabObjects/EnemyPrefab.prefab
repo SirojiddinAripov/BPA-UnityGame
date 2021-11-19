@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 7616571272901793717}
   - component: {fileID: 7616571272901793716}
   - component: {fileID: 7616571272901793719}
-  - component: {fileID: 7616571272901793718}
-  m_Layer: 11
+  - component: {fileID: 7714209057355979720}
+  - component: {fileID: 638720095259088226}
+  m_Layer: 9
   m_Name: EnemyPrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -133807223
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -122,7 +123,23 @@ MonoBehaviour:
   speed: 0
   health: 0
   range: 0
---- !u!58 &7616571272901793718
+--- !u!114 &7714209057355979720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616571272901793713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c368f83b0f8dd2641b724036a54d4628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6516310543711042390, guid: adec07b33b3e4094db68518436ab5f1f, type: 3}
+  speed: 4
+  health: 0
+  range: 0
+--- !u!58 &638720095259088226
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,4 +154,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.49
