@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 4aa6bf33597bea94caa23a4ac9aa93dd
   - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 66da8127f3b390d49ace70e0906eed20
+  - enabled: 1
     path: Assets/Scenes/Beginning House.unity
     guid: b69b415daecd4714180b00048a0e7972
   - enabled: 1

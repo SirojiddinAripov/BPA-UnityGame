@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneControl : MonoBehaviour
 {
+public PlayerStats stats;
+public Player player;
+
     private void Awake() {
         SceneManager.LoadScene(1);
     }
@@ -27,7 +30,14 @@ public class SceneControl : MonoBehaviour
         //if confirmed - SceneManager.LoadScene(1);
     }
 
-    public void changeScene(string x){
+    public void changeScene(int x){
         SceneManager.LoadScene(x);
+    }
+
+    public void Pause(){
+        stats.playerCoords = player.transform.position;
+        stats.playerHealth = player.Health;
+        stats.playerMana = player.Mana;
+        SceneManager.LoadScene(2);
     }
 }

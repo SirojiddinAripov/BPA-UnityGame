@@ -10,21 +10,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed, moveX, moveY, Health, Mana;
-    public Rigidbody2D rb;
-    private Vector2 moveDirection;
-    private Vector3 mousePos;
-    public Animator anim;
-    public Camera cam;
-    public PlayerStats stats;
+    public float moveSpeed, moveX, moveY, Health, Mana; //creates some default stats
+    public Rigidbody2D rb; //references rigidBody
+    private Vector2 moveDirection; //stores the direction for movement
+    private Vector3 mousePos; //stores mouse position (X, Y, Z)
+    public Animator anim; //references player animator
+    public Camera cam; //references camera in scene
+    public PlayerStats stats; //references the storage object for player stats
+    public GameObject fireball;
 
-    private void Start() {
+    private void Start() { //loads saved data or default player stats
         transform.position = stats.playerCoords;
         Health = stats.playerHealth;
         Mana = stats.playerMana;
     }
 
-    private void Update()
+    private void Update() //update inputs and reset lockstate every frame
     {
         Cursor.lockState = CursorLockMode.Confined;
         GetInputs();
@@ -63,17 +64,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void GetHurt(float damage){
+    public void GetHurt(float damage){ //takes damage
         Health -= damage;
         Debug.Log("Player Health: " + Health);
     }
 
-    private void Shoot(){
+    private void Shoot(){ //controls shooting
         if (Input.GetMouseButtonDown(0)){
-            Debug.DrawRay(transform.position, mousePos, Color.blue, 10f);
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, mousePos, Mathf.Infinity, LayerMask.NameToLayer("Enemy"));
+            Debug.Log("fire");
+            Debug.DrawRay(transform.position, mousePos, Color.cyan, 10f);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, mousePos, Mathf.Infinity, 9);
             if (hit){
-                Debug.Log("Hit: " + hit.collider.gameObject);
+                Debug.Log("Hit");
             }
         }
     }   

@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 798435576}
   - component: {fileID: 798435575}
   - component: {fileID: 798435574}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: MapEdges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2956,7 +2956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7616571272901793716, guid: 58013a66ea41c4c469a04f8ce81f38c6, type: 3}
       propertyPath: m_BodyType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7616571272901793717, guid: 58013a66ea41c4c469a04f8ce81f38c6, type: 3}
       propertyPath: m_SortingLayer
@@ -2988,7 +2988,7 @@ GameObject:
   - component: {fileID: 882909115}
   - component: {fileID: 882909114}
   - component: {fileID: 882909113}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Houses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3775,7 +3775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1353357246}
   - component: {fileID: 1353357245}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Tilemaps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3822,7 +3822,7 @@ GameObject:
   - component: {fileID: 2090358747}
   - component: {fileID: 2090358749}
   - component: {fileID: 2090358748}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
