@@ -11,9 +11,11 @@ public class Enemy : MonoBehaviour //controls basic enemy movement and attacks
     private Vector2 moveDir;
     [SerializeField] private float speed, health, range;
     private readonly float maxHealth = 100f;
+    private EnemyStats stats;
     private void Awake() {
         target = FindObjectOfType<Player>().transform;
-        health = maxHealth;
+        health = stats.enemyHealth;
+        transform.position = stats.enemyCoords;
     }
 
     private void FixedUpdate() {
