@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b6aac998479919499b0d12b1c4b93b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: World
+  sceneToLoad: 
   playerPos: {x: 0, y: 0, z: 0}
   stats: {fileID: 11400000, guid: fcedb80b116b43e4ab4e1a6f8127fea7, type: 2}
   player: {fileID: 6516310543711042395, guid: adec07b33b3e4094db68518436ab5f1f, type: 3}

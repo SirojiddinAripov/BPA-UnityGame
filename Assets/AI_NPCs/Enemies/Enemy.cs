@@ -14,8 +14,6 @@ public class Enemy : MonoBehaviour //controls basic enemy movement and attacks
     private EnemyStats stats;
     private void Awake() {
         target = FindObjectOfType<Player>().transform;
-        health = stats.enemyHealth;
-        transform.position = stats.enemyCoords;
     }
 
     private void FixedUpdate() {

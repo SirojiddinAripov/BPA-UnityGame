@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Player Stats
   m_EditorClassIdentifier: 
   playerCoords: {x: 0, y: 0, z: 0}
-  playerHealth: 100
-  playerMana: 100
+  playerHealth: 0
+  playerMana: 0

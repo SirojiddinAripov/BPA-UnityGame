@@ -3748,7 +3748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7395590015200053636, guid: faf43ea24c99aff46b87e86748c17c46, type: 3}
       propertyPath: sceneToLoad
-      value: Beginning House
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7395590015200053637, guid: faf43ea24c99aff46b87e86748c17c46, type: 3}
       propertyPath: m_Name

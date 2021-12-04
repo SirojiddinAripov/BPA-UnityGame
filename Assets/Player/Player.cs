@@ -12,12 +12,11 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed, moveX, moveY, Health, Mana; //creates some default stats
     public Rigidbody2D rb; //references rigidBody
-    private Vector2 moveDirection; //stores the direction for movement
+    private Vector2 moveDirection; //stores the direction for movement (X, Y)
     private Vector3 mousePos; //stores mouse position (X, Y, Z)
     public Animator anim; //references player animator
     public Camera cam; //references camera in scene
     public PlayerStats stats; //references the storage object for player stats
-    public GameObject fireball;
 
     private void Start() { //loads saved data or default player stats
         transform.position = stats.playerCoords;
@@ -34,7 +33,10 @@ public class Player : MonoBehaviour
     private void FixedUpdate() //move and attack on fixed time (50 updates per second)
     {
         Move();      
-        Shoot();  
+        Shoot();
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            
+        }
     }
 
     private void GetInputs() //manage move inputs and positons
